@@ -4,16 +4,11 @@ import App  from "../App";
 
 
 function SearchBarComponent (){
-
+    let token = window.localStorage.getItem("token")
     
     return(
         
-        {token ?
-            <form>       
-            <input type="text" name="name" />
-            <br></br>
-            <input type="submit" value="Search" />
-        </form>
+        {token
         }
        
     );

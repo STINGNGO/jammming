@@ -56,11 +56,27 @@ function App() {
 
     const renderAlbums = () => {
         return albums.map(album => (
-          <div key={album.id}>
-                {album.images.length ? <img width={"100%"} src={album.images[0].url} alt=""/> : <div>No Image</div>}
-                {album.name}
-                <br></br>
-                {album.artists[0].name}
+          <div key={album.id} >
+                
+                <div style={{width: '100%', height:'10vh', display:'flex', justifyContent:'space-between', alignItems:'center',borderBottom:'1px solid white'}}>
+                    <div style={{  height:'100%',lineHeight:'0px' }}>
+                    
+                        <h6 style={{textAlign: 'left', }}>
+                        {album.name}
+                    </h6>
+                    <p style={{fontSize:'11px', }}>
+                    {album.artists[0].name}
+                    </p>
+                    </div>
+                    <span>
+                        +
+                    </span>
+                   
+                
+                                
+                </div>
+                {/* {album.artists[0].name} */}
+                
             </div>
         ))
     }
@@ -82,9 +98,23 @@ function App() {
 
                     : <h2>Please login</h2>
                 }
-                <br></br>
+                <div style={{height:'80vh',
+                    width:'100%', display: 'flex', justifyContent:'space-around', alignItems: 'center'
+                 }}>
+                    
 
-                {renderAlbums()}
+                    <div className = 'left-card' style={{backgroundColor:'green', height: '90%', width:'45%',  overflowY: 'auto' }}>
+                        <p style={{textAlign:'left', marginLeft:'0.5rem'}}>Results</p>
+                        {renderAlbums()}
+                    </div>
+                    <div className = 'right-card' style={{backgroundColor:'blue', height: '90%', width:'45%',overflowY: 'auto'}}>
+                        
+                    </div>
+                </div>
+
+                <div> </div>
+
+               
 
             </header>
         </div>
